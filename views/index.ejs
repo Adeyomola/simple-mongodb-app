@@ -8,15 +8,15 @@
   <title>Zanka no Tachi</title>
 </head>
 
-<body style="background-color:black;color:white;">
-  <h1>Minami</h1>
-  <form method="post" action="/item/add">
-    <label for="name">Name:</label> <br>
-    <input type="text" name="name"> <br>
-    <input type="submit" value="Add">
+<body style="font-family:monospace">
+  <h1>Listr</h1>
+  <form method="post" action="/item/add"">
+    <label for="name">Name:</label>
+    <input type="text" name="name" style="margin:0.5rem"><br>
+    <input type="submit" value="Add" style="margin:0.2rem">
   </form>
   <h4>Items:</h4>
-  <ul>
+  <ul style="">
     <% items.forEach(function(item) { %>
       <li>
         <%= item.name %>

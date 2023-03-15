@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 // Connect to MongoDB
 mongoose
   .connect(
-    'mongodb://mongo:27017/docker-node-mongo',
+`mongodb://${process.env.USER_NAME}:${process.env.USER_PWD}@${process.env.DB_URL}`,
     { useNewUrlParser: true }
   )
   .then(() => console.log('MongoDB Connected'))
@@ -35,3 +35,4 @@ app.post('/item/add', (req, res) => {
 const port = 3000;
 
 app.listen(port, () => console.log('Server running...'));
+app.disable('x-powered-by');
